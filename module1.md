@@ -75,6 +75,12 @@ Verify that the file format has been created with the correct settings by execut
 show file formats in database maternalhealth;
 ```
 
+## Load data
+Execute the following statements in the worksheet to load the staged data into the table.
+```
+copy into maternal from @my_azure_stage file_format=csv PATTERN = '.*csv.*' ;
+```
+
 ## References
 https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#3
 https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#4
