@@ -21,3 +21,20 @@ Next, in the drop-down for the database, select the following context settings:
 Database: ```CITIBIKE``` Schema = ```PUBLIC```
 
 ![create database](image/1.3.png)
+
+To make working in the worksheet easier, let's rename it. In the top left corner, click the worksheet name, which is the timestamp when the worksheet was created, and change it to ```MATERNAL_ZERO_TO_SNOWFLAKE```.
+
+Next we create a table called ```MATERNAL``` to use for loading the comma-delimited data. Instead of using the UI, we use the worksheet to run the DDL that creates the table. Copy the following SQL text into your worksheet:
+
+```
+-- create a table
+create table maternal(
+    Age varchar(50),
+    SystolicBP varchar(50),
+    DiastolicBP varchar(50),
+    BS varchar(50),
+    BodyTemp varchar(50),
+    HeartRate varchar(50),
+    RiskLevel varchar(200)
+);
+```
