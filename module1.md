@@ -44,7 +44,36 @@ Navigate to the Databases tab by clicking the HOME icon in the upper left corner
 ![create database](image/1.4.png)
 
 ## Create an external stage
+We are working with structured, comma-delimited data that has already been staged in an Azure blob storage. Before we can use this data, we first need to create a Stage that specifies the location of our external bucket.
 
+We will use the worksheet to create the external stage. You can also follow the steps listed in the references and use UI to create. Copy the following SQL text into your worksheet:
+```
+CREATE OR REPLACE STAGE my_azure_stage
+  URL='azure://maternal.blob.core.windows.net/maternaldb/'
+  CREDENTIALS=(AZURE_SAS_TOKEN='?sv=2021-12-02&ss=bfqt&srt=co&sp=rwdlacupiytfx&se=2023-03-24T16:05:41Z&st=2023-03-15T08:05:41Z&spr=https&sig=CaQjjx3bXbg9dNpDmPLRI97pesG607WwZAl2vW%2BaP5Q%3D');
+```
+
+Now let's take a look at the contents of the external stage. Execute the following SQL statement:
+```
+list @my_azure_stage;
+```
+
+## Create a file format
+Before we can load the data into Snowflake, we have to create a file format that matches the data structure.
+
+In the worksheet, run the following command to create the file format:
+```
+create or replace file format csv type='csv'
+  compression = 'auto' field_delimiter = ',' record_delimiter = '\n'
+  skip_header = 0 field_optionally_enclosed_by = '\042' trim_space = false
+  error_on_column_count_mismatch = false escape = 'none' escape_unenclosed_field = '\134'
+  date_format = 'auto' timestamp_format = 'auto' null_if = ('') comment = 'file format for ingesting data for zero to snowflake';
+```
+
+Verify that the file format has been created with the correct settings by executing the following command:
+```
+show file formats in database maternalhealth;
+```
 
 ## References
 https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#3
