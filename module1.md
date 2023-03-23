@@ -43,6 +43,7 @@ Navigate to the Databases tab by clicking the HOME icon in the upper left corner
 
 ![create database](image/1.4.png)
 
+## Create an external stage
 
 
 ## References
