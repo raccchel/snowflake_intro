@@ -38,3 +38,13 @@ create table maternal(
     RiskLevel varchar(200)
 );
 ```
+
+Navigate to the Databases tab by clicking the HOME icon in the upper left corner of the worksheet. Then click Data > Databases. In the list of databases, click ```MATERNALHEALTH``` > ```PUBLIC``` > TABLES to see your newly created ```MATERNAL``` table. If you don't see any databases on the left, expand your browser because they may be hidden.
+
+![create database](image/1.4.png)
+
+
+
+## References
+https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#3
+https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#4
