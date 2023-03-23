@@ -15,11 +15,11 @@ CREATE TABLE MATERNAL (
 
 CREATE OR REPLACE STAGE my_azure_stage
   URL='azure://maternal.blob.core.windows.net/maternaldb/'
-  CREDENTIALS=(AZURE_SAS_TOKEN='?sv=2021-12-02&ss=bfqt&srt=co&sp=rwdlacupiytfx&se=2023-03-24T16:05:41Z&st=2023-03-15T08:05:41Z&spr=https&sig=CaQjjx3bXbg9dNpDmPLRI97pesG607WwZAl2vW%2BaP5Q%3D');
+  CREDENTIALS=(AZURE_SAS_TOKEN='ADD SAS TOKEN HERE');
 
 CREATE OR REPLACE STAGE my_azure_stage02
   URL='azure://adls2snowmelt.blob.core.windows.net/snowdemo'
-  CREDENTIALS=(AZURE_SAS_TOKEN='sp=racwdlmeop&st=2023-03-23T17:04:33Z&se=2023-03-24T01:04:33Z&sv=2021-12-02&sr=c&sig=e5xN0v9qiIjnJ2WYkUx86r8aFzqauONCqSRiD6LEE5s%3D');
+  CREDENTIALS=(AZURE_SAS_TOKEN='ADD SAS TOKEN HERE');
  
 
 list @my_azure_stage;
