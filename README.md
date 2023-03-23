@@ -19,3 +19,4 @@ Maternal Health Risk Dataset (Kaggle) contains health data collected from 1014
 2. Query Data
 3. Create and Join Semi-structured Data
 4. Visualize Data
+5. Reset your Snowflake Environment
