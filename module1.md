@@ -81,6 +81,12 @@ Execute the following statements in the worksheet to load the staged data into t
 copy into maternal from @my_azure_stage file_format=csv PATTERN = '.*csv.*' ;
 ```
 
+## Create a new warehouse for data analysis
+Snowflake can easily do this by assigning different, appropriately-sized warehouses to various workloads. We have used the free-trail default warehouse ```COMPUTE_WH``` for data loading. We will create a new warehouse for data analysis in next module.
+
+Navigate to the Admin > Warehouses tab, click + Warehouse, and name the new warehouse `` and set the size to Large.
+![create database](image/1.5.png)
+
 ## References
 https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#3
 https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#4
