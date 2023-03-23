@@ -8,6 +8,8 @@ In this hands-on lab, we will introduce how to get started with Snowflake. You w
 ## Prerequisites
 - An active Azure subscription and storage account
 - Register for Snowflake free trial
+- Download the dataset in "dataset" folder
+- Upload the dataset into Azure blob storage
 
 ## About the Dataset
 Maternal Health Risk Dataset (Kaggle) contains health data collected from 1014 women. Features include age, systolic blood pressure, diastolic blood pressure, blood glucose, heartrate, and risk level labeled by domain experts. Please find the dataset in the dataset folder.
